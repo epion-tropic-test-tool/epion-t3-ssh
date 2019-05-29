@@ -89,6 +89,8 @@ public final class ScpUtils {
     public void put(
             SshConnectionConfiguration sshConnectionConfiguration,
             String remoteDirPath,
+            String remoteFileName,
+            String mode,
             String localPath)
             throws IOException {
         Connection connection = null;
@@ -107,7 +109,11 @@ public final class ScpUtils {
                         sshConnectionConfiguration.getPassword());
             }
             SCPClient scp = connection.createSCPClient();
-            scp.put(localPath, remoteDirPath);
+            if (StringUtils.isNotEmpty(remoteFileName)) {
+                scp.put(localPath, remoteFileName, remoteDirPath, mode == null ? "0600" : mode);
+            } else {
+                scp.put(localPath, remoteDirPath);
+            }
         } finally {
             if (connection != null) {
                 connection.close();

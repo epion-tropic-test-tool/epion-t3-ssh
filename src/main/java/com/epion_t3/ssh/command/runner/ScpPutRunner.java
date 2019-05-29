@@ -34,7 +34,8 @@ public class ScpPutRunner extends AbstractCommandRunner<ScpPut> {
         Path localFilePath = Paths.get(getCommandBelongScenarioDirectory(), command.getLocalFile()).normalize();
 
         try {
-            ScpUtils.getInstance().put(sshConnectionConfiguration, command.getRemoteDir(), localFilePath.toString());
+            ScpUtils.getInstance().put(sshConnectionConfiguration, command.getRemoteDir(),
+                    command.getRemoteFileName(), command.getMode(), localFilePath.toString());
         } catch (IOException e) {
             throw new SystemException(e, SshMessages.SSH_ERR_0001);
         }

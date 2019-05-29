@@ -33,7 +33,8 @@ public class ScpPutEvidenceRunner extends AbstractCommandRunner<ScpPutEvidence> 
         Path evidenceFile = referFileEvidence(command.getTarget());
 
         try {
-            ScpUtils.getInstance().put(sshConnectionConfiguration, command.getRemoteDir(), evidenceFile.toString());
+            ScpUtils.getInstance().put(sshConnectionConfiguration, command.getRemoteDir(),
+                    command.getRemoteFileName(), command.getMode(), evidenceFile.toString());
         } catch (IOException e) {
             throw new SystemException(e, SshMessages.SSH_ERR_0001);
         }

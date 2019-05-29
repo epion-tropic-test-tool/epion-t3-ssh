@@ -29,5 +29,15 @@ public class ScpPutEvidence extends Command {
     @NotEmpty
     private String remoteDir;
 
+    /**
+     * リモートファイル名.
+     */
+    private String remoteFileName;
+
+    /**
+     * モード.
+     * パーミッション.
+     */
+    private String mode;
 
 }

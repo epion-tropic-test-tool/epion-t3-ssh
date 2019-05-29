@@ -147,6 +147,24 @@ commands:
         summary:
           - lang: ja_JP
             contents: "転送先のリモートディレクトリ"
+      - order: 8
+        name: remoteFileName
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "転送先のリモートファイル名"
+      - order: 9
+        name: mode
+        required: false
+        type: string
+        pattern: "[0-7]{4}"
+        summary:
+          - lang: ja_JP
+            contents: "転送先のリモートファイルのパーミッション"
+        description:
+          - lang: ja_JP
+            contents: "パーミッションは未指定の場合、「0600」となります。4桁で指定してください。"
   ##########################
   # ScpPutEvidence
   ##########################
@@ -214,6 +232,24 @@ commands:
         summary:
           - lang: ja_JP
             contents: "転送先のリモートディレクトリ"
+      - order: 8
+        name: remoteFileName
+        required: false
+        type: string
+        summary:
+          - lang: ja_JP
+            contents: "転送先のリモートファイル名"
+      - order: 9
+        name: mode
+        required: false
+        type: string
+        pattern: "[0-7]{4}"
+        summary:
+          - lang: ja_JP
+            contents: "転送先のリモートファイルのパーミッション"
+        description:
+          - lang: ja_JP
+            contents: "パーミッションは未指定の場合、「0600」となります。4桁で指定してください。"
 #####################################
 # メッセージ定義
 #####################################

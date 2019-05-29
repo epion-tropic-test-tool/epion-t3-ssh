@@ -30,6 +30,17 @@ public class ScpPut extends Command {
     private String remoteDir;
 
     /**
+     * リモートファイル名.
+     */
+    private String remoteFileName;
+
+    /**
+     * モード.
+     * パーミッション.
+     */
+    private String mode;
+
+    /**
      * ローカルファイル.
      */
     @NotEmpty
